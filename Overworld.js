@@ -88,9 +88,12 @@ class Overworld {
     } else {
       // if map is already started, no need to start everything again
       this.map = window.OverworldMaps[mapConfig.id].started;
+      // starting location of the hero might change when reopening a map (if spawnned)
+      this.map.addWall(
+        this.map.gameObjects.hero.x,
+        this.map.gameObjects.hero.y
+      );
     }
-    // starting location of the hero might change when reopening a map (if spawnned)
-    this.map.addWall(this.map.gameObjects.hero.x, this.map.gameObjects.hero.y);
 
     // if saved inititalHeroState is provided then update hero values
     if (initialHeroState) {
