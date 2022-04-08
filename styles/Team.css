@@ -1,0 +1,30 @@
+.Team {
+  display: flex;
+  position: absolute;
+  top: 4px;
+  gap: 4px;
+}
+
+.Team[data-team="player"] {
+  left: 4px;
+}
+
+.Team[data-team="enemy"] {
+  right: 4px;
+}
+
+/* start stateful paths as display none */
+.Team .dead-pizza {
+  display: none;
+}
+.Team .active-pizza-indicator {
+  display: none;
+}
+
+/* display them as opted in by data-attributes */
+.Team [data-dead="true"] .dead-pizza {
+  display: block;
+}
+.Team [data-active="true"] .active-pizza-indicator {
+  display: block;
+}
