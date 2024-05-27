@@ -8,14 +8,14 @@ class Overworld {
 
   startGameLoop() {
     const step = () => {
-      // Clear of the canvas before drawing new layer
+      // Clear off the canvas before drawing new layer
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
       // Establish the camera person
       const cameraPerson = this.map.gameObjects.hero;
 
       // Update game objects
-      // this was separated from draw after introducing camerson person,
+      // this was separated from draw after introducing camera person,
       // because, some grahics were a little choppy
       Object.values(this.map.gameObjects).forEach((object) => {
         object.update({
@@ -88,7 +88,7 @@ class Overworld {
     } else {
       // if map is already started, no need to start everything again
       this.map = window.OverworldMaps[mapConfig.id].started;
-      // starting location of the hero might change when reopening a map (if spawnned)
+      // starting location of the hero might change when reopening a map (if spawned)
       this.map.addWall(
         this.map.gameObjects.hero.x,
         this.map.gameObjects.hero.y
